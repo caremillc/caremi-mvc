@@ -1,0 +1,9 @@
+#folders 
+/vendor/
+/framework-mvc/
+
+#files
+.idea/
+.env
+notes.txt
+composer.lock
