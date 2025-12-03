@@ -1,7 +1,6 @@
 <?php 
 namespace App\Http\Controllers;
 
-abstract class Controller 
-{
-    
-}
+use Careminate\Http\Controllers\AbstractController;
+
+abstract class Controller extends AbstractController{}

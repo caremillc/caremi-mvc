@@ -1,15 +1,21 @@
-<?php 
+<?php
 
-use Careminate\Routing\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\SimpleMiddleware;
+use Careminate\FrameworkSetting;
+use Careminate\Routing\Route;
 
+Route::group(['prefix' => '/api/', 'middleware' => [SimpleMiddleware::class]], function () {
 
-Route::group(['prefix'=>'/api/','middleware'=>[SimpleMiddleware::class]], function(){
-    //api route
     Route::get('/', function () {
-       echo "welcome to anonymous api route";
+        FrameworkSetting::setLocale('en');
+        echo FrameworkSetting::getLocale();
     });
 
-     Route::get('any', HomeController::class, 'api_any', [SimpleMiddleware::class]);
+//api route
+    // Route::get('/', function () {
+    //     echo "welcome to anonymous api route";
+    // });
+
+    Route::get('any', HomeController::class, 'api_any', [SimpleMiddleware::class]);
 });

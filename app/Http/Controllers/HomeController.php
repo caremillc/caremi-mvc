@@ -7,7 +7,7 @@ class HomeController extends Controller
 {
      public function index()
     {
-        echo "Welcome to home index";
+        return view('home', ['title' => 'Welcome']);
     }
 
     public function about()

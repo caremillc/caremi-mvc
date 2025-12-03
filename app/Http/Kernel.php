@@ -1,12 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 namespace App\Http;
 
 use App\Http\Middleware\SimpleMiddleware;
 
 class Kernel
 {
-    public static $globalWeb = [
+
+     public static $globalWeb = [
         \Careminate\Sessions\Session::class,
+        \Careminate\Http\Middlewares\CSRFToken::class
     ];
 
     public static $middlewareWebRoute = [
